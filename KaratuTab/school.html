@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="school.css">
+    <title>School-Karatu</title>
+</head>
+<body>
+    <main>
+        <header>
+            <div class="top">
+                <img src="assets/static/left-arrow.png" alt="" onclick="window.history.back()">
+                <h1>School Bag</h1>
+            </div>
+    
+            <input type="search" name="search" id="search" placeholder="Search School Bag..">
+    
+        </header>
+        <section>
+            <div class="section" onclick="topage('Textbooks.html')" style="background: linear-gradient(145deg, #ff8856, #e67248);"><p>Text Books</p><div class="img"><img src="assets/static/open-book (2).png" alt="book"></div></div>
+            <div class="section" onclick="topage('Textbooks.html')" style="background: linear-gradient(145deg, #6b9ffe, #5a86d5);"><p>Notes</p><div class="img"><img src="assets/static/wirte (1).png" alt="book"></div></div>
+            <div class="section" onclick="topage('Textbooks.html')" style="background: linear-gradient(145deg, #ddb6dd, #ba99ba);"><p>Novels</p><div class="img"><img src="assets/static/inkwell.png" alt="book"></div></div>
+            <div class="section" onclick="topage('scientific-calculator-master/index.html')" style="background: linear-gradient(145deg, #74be98, #61a080);"><p>Calculator</p><div class="img"><img src="assets/static/calculator.png" alt="book"></div></div>
+            <div class="section" style="background: linear-gradient(145deg, #ffd787, #e6b571);"><p>Sketch Pad</p><div class="img"><img src="assets/static/drawing (1).png" alt="book"></div></div>
+            <div class="section" onclick="topage('Dictionary/index.html')" style="background: linear-gradient(145deg, #8ae1ff, #74bde0);"><p>Dictionary</p><div class="img"><img src="assets/static/dictionary.png" alt="book"></div></div>
+            <div class="section" onclick="topage('assets/static/four-figure-log-tables.pdf')" style="background: linear-gradient(145deg, #d3efaf, #b1c994);"><p>Four Figure Table</p><div class="img"><img src="assets/static/ruler.png" alt="book"></div></div>
+            <div class="section" style="background: linear-gradient(145deg, #ff8856, #e67248);"><p>Thesaurus</p><div class="img"><img src="assets/static/open-book (2).png" alt="book"></div></div>
+            <div class="section" onclick="topage('translate/index.html')" style="background: linear-gradient(145deg, #ddb6dd, #ba99ba);"><p>Translator</p><div class="img"><img src="assets/static/translate.png" alt="book"></div></div>
+            <div class="section" onclick="topage('ptable.html')" style="background: linear-gradient(145deg, #6b9ffe, #5a86d5);"><p>Periodic Table</p><div class="img"><img src="assets/static/periodic-table (1).png" alt="book"></div></div>
+        </section>
+    </main>
+
+
+    <script>
+
+        function topage(url){
+            window.location.href = url;
+        }
+        document.getElementById('search').addEventListener('input', function() {
+            const searchQuery = this.value.toLowerCase();
+            const sections = document.querySelectorAll('.section');
+            
+            sections.forEach(section => {
+                const text = section.querySelector('p').textContent.toLowerCase();
+                if (text.includes(searchQuery)) {
+                    section.style.display = 'flex'; // Show section
+                } else {
+                    section.style.display = 'none'; // Hide section
+                }
+            });
+        });
+    </script>
+</body>
+</html>

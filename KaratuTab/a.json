@@ -1,0 +1,12 @@
+{
+    "model": "gpt-4",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Make a single page website that shows off different neat javascript features for drop-downs and things to display information. The website should be an HTML file with embedded javascript and CSS."
+      }
+    ],
+    "temperature": 0.7,
+    "max_tokens": 64,
+    "top_p": 1
+  }

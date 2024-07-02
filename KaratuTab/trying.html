@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" manifest="trying.html">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hajjaju's Counter</title>
+
+    <style>
+        body {
+            color: white;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding: 0;
+            margin: 0;
+            background-image: url(assets/static/homebgPhone.jpg);
+            background-position: center;
+            background-size: cover;
+            height: 100lvh;
+            backdrop-filter: brightness(0.8);
+        }
+
+        main {
+            width: 100%;
+        }
+
+        .flash{
+            animation: flash 1s linear infinite;
+        }
+
+        @keyframes flash {
+            0%{
+                background-color: black;
+            }
+            50% {
+                background-color: white;
+            }
+            100%{
+                background-color: black;
+            }
+        }
+
+        #count {
+            font-size: xxx-large;
+            text-align: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+        }
+        #counter {
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            background-color: white;
+            box-shadow: 5px 5px 30px white, inset -5px -5px 30px gray;
+            margin: 20% auto;
+            font-size: 80px;
+            font-weight: 500;
+            color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 20px solid black;
+            border-inline-color: skyblue;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        #counter:active {
+            animation: rotate 0.1s linear infinite;
+        }
+
+        @keyframes rotate {
+            0%{
+                rotate: 0deg;
+            }
+
+            100%{
+                rotate: 360deg;
+            }
+        }
+
+        #reset {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        button {
+            color: red;
+            border-radius: 100px;
+            width: 100px;
+            height: 30px;
+            text-transform: uppercase;
+        }
+
+        hr {
+            width: 100%;
+        }
+
+        #select {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: x-large;
+        }
+
+        #selected {
+            background-color: transparent;
+            border: transparent;
+            color: White;
+            padding: 2% 5%;
+            width: 30%;
+            font-size: x-large;
+        }
+    </style>
+</head>
+<body id="body">
+    <header>
+        <h1  data-period="2000" data-type='[ " Jabir Nasir Argungu", " A Web Designer.", " An AI Programmer.", " A Data Scientist", " A Robotics Engineer"]'>Ramatu's Counter</h1>
+    </header>
+    <hr>
+    <main>
+        <div id="count">
+            <p><span id="moved"></span>/<span id="moves"></span></p>
+        </div>
+        <div id="reset">
+            <button onclick="reset()" ondblclick="resett()">reset</button>
+        </div>
+        <div id="counter" onclick="add()">
+            <h1>R</h1>
+        </div>
+        <div id="select">
+            <p>Select:</p>
+            <select name="select" id="selected" onchange="sub()">
+                <option value="10">$number</option>
+                <option value="33">33</option>
+                <option value="100" selected>100</option>
+                <option value="1000">1000</option>
+            </select>
+        </div>
+        <hr>
+        <div id="zikr">
+            <p></p>
+        </div>
+
+    </main>
+
+    <script>
+        var moved = document.getElementById('moved');
+        var moves = document.getElementById('moves');
+        var counter = document.getElementById('counter');
+        var zikr = document.getElementById('zikr');
+        var number = 0;
+        var selected = document.getElementById('selected');
+        moves.innerHTML = document.getElementById('selected').value;
+        // console.log(selected.value)
+        moved.innerHTML = number;
+        var m = selected.value;
+        var body = document.getElementById('body');
+
+        function reset(){
+            number = 0;
+            moved.innerHTML = number;
+            
+        }
+
+        function resett(){
+            window.history.scrollRestoration;
+            
+        }
+
+        function add(){
+            number += 1;
+            moved.innerHTML = number;
+            m = selected.value;
+            if (number > m) {
+                number = 0
+                moved.innerHTML = number;
+                window.alert('You have reached ' + m)
+            } else{
+                body.style.backgroundImage = 'url(assets/static/homebgPhone.jpg)';
+            };
+        }
+
+        function sub(){
+            moves.innerHTML = document.getElementById('selected').value;
+            m = selected.value;
+            if (number == m) {
+                counter.style.display = 'none';
+                body.style.animation = 'flash';
+
+                
+            }else{
+                body.style.backgroundImage = 'url(assets/static/homebgPhone.jpg)';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>KaratuTab</title>
+
+    <style>
+      body {
+        transition: background-image 0.5s ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="main">
+      <nav>
+        <div class="dots">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="apps"><img src="assets/static/waec.jpeg" alt="app"></div>
+        <div class="apps"><img src="assets/static/Neco.jpeg" alt="app"></div>
+        <div class="apps"><img src="assets/static/jamb.jpeg" alt="app"></div>
+        <div class="apps"><img src="assets/static/bece.jpeg" alt="app"></div>
+        <div class="apps" style="background-color: rgba(0, 0, 0, 0.5);"><img src="assets/static/right-arrow.png" alt="app" style="width: 30px;"></div>
+      </nav>
+      <main>
+        <header>
+          <div class="head">
+            <h1>Hello Musa</h1>
+          </div>
+          <div class="quote">
+            <p id="quoteText"><span><i></i></span><br><span id="quoteAuthor"></span></p>
+            <input type="file" accept="image/*" id="imageInput">
+          </div>
+        </header>
+        <div class="sections">
+          <a href="#" class="section">
+            <div class="img"><img src="assets/static/encyclopedia.png" alt="info" /></div>
+            <div class="title"><p>Encyclopedia</p></div>
+          </a>
+          <a href="school.html" class="section">
+            <div class="img"><img src="assets/static/school-bag (1).png" alt="info" /></div>
+            <div class="title"><p>School Bag</p></div>
+          </a>
+          <a href="tabguide.html" class="section">
+            <div class="img"><img src="assets/static/info.png" alt="info" /></div>
+            <div class="title"><p>Guide</p></div>
+          </a>
+          <a href="#" class="section">
+            <div class="img"><img src="assets/static/option.png" alt="info" /></div>
+            <div class="title"><p>More</p></div>
+          </a>
+        </div>
+      </main>
+    </section>
+
+    <script>
+      document.getElementById('imageInput').addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function(e) {
+            document.body.style.backgroundImage = `url(${e.target.result})`;
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+      // Quotes array
+      const quotes = [
+        { text: "The beautiful thing about learning is that nobody can take it away from you.", author: "B.B. King" },
+        { text: "Education is the most powerful weapon which you can use to change the world.", author: "Nelson Mandela" },
+        { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+        { text: "The future belongs to those who believe in the beauty of their dreams.", author: "Eleanor Roosevelt" },
+        { text: "It always seems impossible until it's done.", author: "Nelson Mandela" }
+      ];
+
+      // Function to display a random quote
+      function displayRandomQuote() {
+        const randomIndex = Math.floor(Math.random() * quotes.length);
+        const randomQuote = quotes[randomIndex];
+        document.querySelector('#quoteText i').textContent = randomQuote.text;
+        document.getElementById('quoteAuthor').textContent = `-${randomQuote.author}`;
+      }
+
+      // Display a random quote on page load
+      displayRandomQuote();
+    </script>
+  </body>
+</html>

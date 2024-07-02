@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <td>name</td>
+            <td>age</td>
+        </thead>
+        <tbody id="bodyy">
+            <tr><td>jabir</td><td>11</td></tr>
+            <tr><td>jabir</td><td>11</td></tr>
+            <tr><td>jabir</td><td>11</td></tr>
+            <tr><td>jabir</td><td>11</td></tr>
+            <tr><td>jabir</td><td>11</td></tr>
+        </tbody>
+    </table>
+
+
+    <input type="text" id="text">
+    <div id="hmmm" onclick="add()">
+        <h1>Bush</h1>
+    </div>
+
+
+    <script>
+        var text = document.getElementById('text');
+        var go = document.getElementById('hmmm');
+
+        function add(){
+            document.getElementById('bodyy').innerHTML += '<tr><td>' + text.value + '</td><td>' + text.value + '</td></tr>'; 
+        }
+    </script>
+</body>
+</html>
