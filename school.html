@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="school.css">
+    <title>School-Karatu</title>
+</head>
+<body>
+    <main>
+        <header>
+            <div class="top">
+                <img src="assets/static/left-arrow.png" alt="" onclick="window.history.back()">
+                <h1>School Bag</h1>
+            </div>
+    
+            <input type="search" name="search" id="search" placeholder="Search School Bag..">
+    
+        </header>
+        <section>
+            <div class="section" onclick="topage('Textbooks.html')"><div class="img"><img src="assets/static/bookbg-removebg-preview.png" alt="book"></div><p>Text Books</p></div>
+            <div class="section" onclick="topage('notes/')"><!----><div class="img"><img src="assets/static/notes3.avif" alt="book"></div> <p>Notes</p></div>
+            <div class="section" onclick="topage('Textbooks.html')"><div class="img"><img src="assets/static/novelsbg2.jpg" alt="book"></div><p>Novels</p></div>
+            <div class="section" onclick="topage('scientific-calculator-master/index.html')"><div class="img"><img src="assets/static/calculator.jpg" alt="book"></div><p>Calculator</p></div>
+            <div class="section" onclick="topage('sketch/')" ><div class="img"><img src="assets/static/paint.avif" alt="book"></div><p>Sketch Pad</p></div>
+            <div class="section" onclick="topage('Dictionary/index.html')"><div class="img"><img src="assets/static/dictionary.jpg" alt="book"></div><p>Dictionary</p></div>
+            <div class="section" onclick="topage('assets/static/four-figure-log-tables.pdf')"><div class="img"><img src="assets/static/4ft.avif" alt="book"></div><p>Four Figure Table</p></div>
+            <div class="section"><div class="img"><img src="assets/static/8848941.jpg" alt="book"></div><p>Thesaurus</p></div>
+            <!-- <div class="section" onclick="topage('translate/index.html')"><div class="img"><img src="assets/static/translate.png" alt="book"></div><p>Translator</p></div> -->
+            <div class="section" onclick="topage('ptable.html')"><div class="img"><img src="assets/static/108055968432.jpg" alt="book"></div><p>Periodic Table</p></div>
+        </section>
+    </main>
+
+
+    <script>
+
+        function topage(url){
+            window.location.href = url;
+        }
+        document.getElementById('search').addEventListener('input', function() {
+            const searchQuery = this.value.toLowerCase();
+            const sections = document.querySelectorAll('.section');
+            
+            sections.forEach(section => {
+                const text = section.querySelector('p').textContent.toLowerCase();
+                if (text.includes(searchQuery)) {
+                    section.style.display = 'flex'; // Show section
+                } else {
+                    section.style.display = 'none'; // Hide section
+                }
+            });
+        });
+    </script>
+</body>
+</html>

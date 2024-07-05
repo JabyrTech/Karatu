@@ -1,0 +1,126 @@
+* {
+    text-decoration: none;
+}
+
+body {
+    background-image: url('assets/static/richard-horvath-is8jWT-mvng-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100lvh;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+    /* background: linear-gradient(rgba(255, 0, 0, 0.6), black); */
+    backdrop-filter: opacity(0.5);
+    overflow-y: scroll;
+}
+
+nav {
+    position: fixed;
+    bottom: 0;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    padding: 5%;
+}
+
+header {
+    padding: 10%;
+    padding-top: 5%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    p {
+        max-width: 70%;
+    }
+}
+.head {
+}
+.quote {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+}
+.sections {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+}
+.section {
+    width: 40% ;
+    border-radius: 5px;
+    margin-bottom: 5%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+    scroll-snap-type: mandatory;
+    scroll-snap-stop: always;
+}
+
+
+.img {
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img img {
+    width: 150px;
+    border-radius: 50px;
+}
+
+.dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10%;
+}
+
+.dots div {
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 100px;
+    margin: 5px;
+}
+
+.apps {
+    border-radius: 10px;
+    background-color: white;
+    width: 64px;
+    height: 64px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.apps img {
+    width: 64px;
+    border-radius: 10px;
+}

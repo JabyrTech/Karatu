@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Periodic Table</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        margin-top: 20px;
+      }
+      .table {
+        display: grid;
+        grid-template-columns: repeat(18, 60px);
+        gap: 2px;
+      }
+      .element {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
+      .element:hover {
+        transform: scale(1.1);
+      }
+      .element span {
+        display: block;
+      }
+      .number {
+        font-size: 12px;
+        color: #999;
+      }
+      .symbol {
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .name {
+        font-size: 12px;
+      }
+      .solid {
+        background-color: lightblue;
+      }
+      .liquid {
+        background-color: lightgreen;
+      }
+      .gas {
+        background-color: lightyellow;
+      }
+      .table .element:nth-child(1),
+      .table .element:nth-child(2),
+      .table .element:nth-child(3),
+      .table .element:nth-child(10),
+      .table .element:nth-child(11),
+      .table .element:nth-child(18) {
+        grid-column: span 1;
+      }
+      .table .element:nth-child(n+57):nth-child(-n+71),
+      .table .element:nth-child(n+89):nth-child(-n+103) {
+        grid-column: span 18;
+      }
+      /* Modal styles */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0,0.4);
+        padding-top: 60px;
+      }
+      .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+      }
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Periodic Table</h1>
+    <div class="table">
+      <!-- Hydrogen (Gas) -->
+      <div class="element gas" data-name="Hydrogen" data-number="1" data-symbol="H" data-state="Gas" style="grid-column: 1 / span 1;">
+        <span class="number">1</span>
+        <span class="symbol">H</span>
+        <span class="name">Hydrogen</span>
+      </div>
+      <!-- Helium (Gas) -->
+      <div class="element gas" data-name="Helium" data-number="2" data-symbol="He" data-state="Gas" style="grid-column: 18 / span 1;">
+        <span class="number">2</span>
+        <span class="symbol">He</span>
+        <span class="name">Helium</span>
+      </div>
+      <!-- Continue adding elements with data attributes here -->
+
+    </div>
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="element-name"></h2>
+        <p><strong>Atomic Number:</strong> <span id="element-number"></span></p>
+        <p><strong>Symbol:</strong> <span id="element-symbol"></span></p>
+        <p><strong>State:</strong> <span id="element-state"></span></p>
+      </div>
+    </div>
+
+    <script>
+      // Get the modal
+      var modal = document.getElementById("myModal");
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+
+      // Add event listeners to all elements
+      document.querySelectorAll('.element').forEach(element => {
+        element.addEventListener('click', function() {
+          var name = this.getAttribute('data-name');
+          var number = this.getAttribute('data-number');
+          var symbol = this.getAttribute('data-symbol');
+          var state = this.getAttribute('data-state');
+
+          document.getElementById('element-name').textContent = name;
+          document.getElementById('element-number').textContent = number;
+          document.getElementById('element-symbol').textContent = symbol;
+          document.getElementById('element-state').textContent = state;
+
+          modal.style.display = "block";
+        });
+      });
+    </script>
+  </body>
+</html>
