@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Sketching App</title>
+</head>
+<body>
+    <header>
+        <h1>JIXON Sketch</h1>
+        <div class="tools">
+            <button id="pen" class="tool-button">Pen</button>
+            <button id="eraser" class="tool-button">Eraser</button>
+            <button id="rectangle" class="tool-button">Rectangle</button>
+            <button id="circle" class="tool-button">Circle</button>
+            <button id="text" class="tool-button">Text</button>
+            <input type="color" id="color-picker" value="#000000" title="Color Picker">
+            <input type="range" id="brush-size" min="1" max="10" value="2" title="Brush Size">
+            <button id="clear" class="tool-button">Clear</button>
+        </div>
+    </header>
+    <main>
+        <canvas id="canvas"></canvas>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>
