@@ -20,8 +20,8 @@ section {
 }
 
 .section {
-    width: 200px;
-    height: 330px;
+    width: 150px;
+    height: 300px;
     display: flex;
     align-items: center;
     flex-direction: column;
