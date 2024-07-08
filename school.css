@@ -14,7 +14,7 @@ section {
 }
 
 .section {
-    width: 300px;
+    width: 250px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -40,8 +40,8 @@ p {
 }
 
 .img img {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
 
 }
 
