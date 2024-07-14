@@ -30,17 +30,26 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-            height: 40vh !important;
-            width: 40% !important;
+            height: 200px !important;
+            width: 200px !important;
             border-radius: 10px;
+            border-radius: 50%;
+        }
+
+        section:nth-child(6) {
+            animation: slideInFromLeft 0.5s ease-in forwards;
+        }
+
+        section:nth-child(5) {
+            animation: slideInFromLeft 0.5s ease-in forwards;
         }
 
         section:nth-child(4) {
-            animation: slideInFromBottom 0.5s ease-in forwards;
+            animation: slideInFromLeft 0.5s ease-in forwards;
         }
 
         section:nth-child(3) {
-            animation: slideInFromLeft 0.5s ease-in forwards;
+            animation: slideInFromRight 0.5s ease-in forwards;
         }
 
         section:nth-child(2) {
@@ -48,7 +57,7 @@
         }
 
         section:nth-child(1) {
-            animation: slideInFromTop 0.5s ease-in forwards;
+            animation: slideInFromRight 0.5s ease-in forwards;
         }
 
         section div {
@@ -56,14 +65,17 @@
             align-items: end;
             justify-content: start;
             width: calc(100% - 5vh);
-            padding: 0 0 5vh 5vh;
-            height: 35vh;
+            height: 25vh;
             border-radius: 10px;
+            background: none !important;
+            text-align: center;
+            width: 100%;
         }
 
         h1 {
             color: white;
-            font-size: 40px;
+            font-size: 25px;
+            width: 100%;
         }
 
         @keyframes slideInFromBottom {
@@ -114,10 +126,10 @@
 <body>
     <section onclick="topage('betterme/index.html')" style="background-image: url('assets/static/Cream\ Black\ Illustrated\ Guidebook\ For\ UGC\ Content\ Creators\ Wattpad\ Book\ Cover\ \(1\).png');">
         <div>
-        <!-- <h1>Better Me</h1> -->
+        <h1>Better Me</h1>
         </div>
     </section>
-    <section onclick="topage('Culture/')" style="background-image: url('assets/static/bafade.jpeg'); background-position: left;">
+    <section onclick="topage('culture/')" style="background-image: url('assets/static/bafade.jpeg'); background-position: left;">
         <div style="background: linear-gradient(0deg, rgba(0, 83, 0, 0.8) 30%, transparent);">
         <h1>My Culture</h1>
         </div>
@@ -126,6 +138,20 @@
         <div style="background: linear-gradient(0deg, rgba(183, 100, 0, 0.8), transparent);">
         <h1>Girl Me</h1>
         </div>
+    </section>
+    <section style="background-image: url('assets/static/homebgPhone.jpg'); backdrop-filter: brightness(0.1);">
+        <div style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), transparent);">
+        <h1>
+            Coming Soon...
+        </h1>
+            </div>
+    </section>
+    <section style="background-image: url('assets/static/homebgPhone.jpg'); backdrop-filter: brightness(0.1);">
+        <div style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), transparent);">
+        <h1>
+            Coming Soon...
+        </h1>
+            </div>
     </section>
     <section style="background-image: url('assets/static/homebgPhone.jpg'); backdrop-filter: brightness(0.1);">
         <div style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), transparent);">
