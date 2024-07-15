@@ -18,7 +18,7 @@
             align-items: center;
             justify-content: space-evenly;
             flex-wrap: wrap;
-            height: 100vh;
+            height: 100lvh;
             width: 100%;
             backdrop-filter: brightness(0.4);
             background-repeat: no-repeat;
@@ -36,13 +36,25 @@
             border-radius: 50%;
         }
 
-        section:nth-child(6) {
+        section:nth-child(9) {
+            animation: slideInFromRight 0.5s ease-in forwards;
+        }
+
+        section:nth-child(8) {
+            animation: slideInFromBottom 0.5s ease-in forwards;
+        }
+
+        section:nth-child(7) {
             animation: slideInFromLeft 0.5s ease-in forwards;
         }
 
-        section:nth-child(5) {
-            animation: slideInFromLeft 0.5s ease-in forwards;
+        section:nth-child(6) {
+            animation: slideInFromRight 0.5s ease-in forwards;
         }
+
+        /* section:nth-child(5) {
+            animation: slideInFromLeft 0.5s ease-in forwards;
+        } */
 
         section:nth-child(4) {
             animation: slideInFromLeft 0.5s ease-in forwards;
@@ -53,11 +65,11 @@
         }
 
         section:nth-child(2) {
-            animation: slideInFromRight 0.5s ease-in forwards;
+            animation: slideInFromTop 0.5s ease-in forwards;
         }
 
         section:nth-child(1) {
-            animation: slideInFromRight 0.5s ease-in forwards;
+            animation: slideInFromLeft 0.5s ease-in forwards;
         }
 
         section div {
@@ -138,6 +150,27 @@
         <div style="background: linear-gradient(0deg, rgba(183, 100, 0, 0.8), transparent);">
         <h1>Girl Me</h1>
         </div>
+    </section>
+    <section onclick="topage('pandq')" style="background-image: url('assets/static/question.jpeg'); backdrop-filter: brightness(0.1);">
+        <div style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), transparent);">
+        <h1>
+            Past Questions
+        </h1>
+            </div>
+    </section>
+    <section style="background-image: url('assets/static/game\ \(1\).png'); backdrop-filter: brightness(0.1);">
+        <div style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), transparent);">
+        <h1>
+            Coming Soon...
+        </h1>
+            </div>
+    </section>
+    <section style="background-image: url('assets/static/novelsbg2.jpg'); backdrop-filter: brightness(0.1);">
+        <div style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), transparent);">
+        <h1>
+            Coming Soon...
+        </h1>
+    </div>
     </section>
     <section style="background-image: url('assets/static/homebgPhone.jpg'); backdrop-filter: brightness(0.1);">
         <div style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), transparent);">
