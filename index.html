@@ -68,12 +68,28 @@
             font-size: xx-large;
             padding: 5px;
         }
+
+        .sections a {
+          /* animation: slideInFromBottom 5s linear ease-in forwards; */
+          transition: 1s;
+        }
+
+        @keyframes slideInFromBottom {
+            0% {
+                transform: translateY(50%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
     </style>
   </head>
   <body>
     <section class="main">
       <nav>
-        <div class="dots">
+        <div class="dots" onclick="pop()">
           <div></div>
 
         </div>
@@ -93,10 +109,10 @@
             <p id="quoteText"><span><i></i></span><br><span id="quoteAuthor"></span></p>
           </div>
         </header>
-        <div class="sections">
-          <a href="tabguide.html" class="section">
-            <div class="img"><img src="assets/static/info.png" alt="info" /></div>
-            <div class="title"><p>Guide</p></div>
+        <div class="sections" id="sections">
+          <a href="class/" class="section">
+            <div class="img"><img src="assets/static/class.png" alt="info" /></div>
+            <div class="title"><p>Class</p></div>
           </a>
           <a href="school.html" class="section">
             <div class="img"><img src="assets/static/school-bag (1).png" alt="info" /></div>
@@ -240,6 +256,17 @@
 
         // Initial adjustment
         adjustInputWidth();
+
+
+
+        function pop(){
+
+          if (document.getElementById('sections').style.display == 'none'){
+            document.getElementById('sections').style.display = 'flex';
+          } else {
+            document.getElementById('sections').style.display = 'none';
+          }
+        }
     </script>
   </body>
 </html>
