@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Past and Questions - Karatu</title>
+
+    <style>
+        .button {
+            border: none;
+            padding: 10px;
+            color: gold;
+            align-self: end;
+            justify-self: end;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            margin-right: 10px;
+            border-radius: 20px;
+        }
+
+        .button img {
+                width: 30px;
+                color: White;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <section>
+            <h1>Past Questions</h1>
+            <p>For Waec, Neco and Jamb!</p>
+            <!-- <button class="button"> <img src="../assets/static/photo-album.png" alt=""> Open Gallery</button> -->
+        </section>
+    </header>
+
+    <section class="topics">
+        <div class="topic" onclick="topage('waec/')">
+            <div class="img" style="background-image: url(../assets/static/waec.jpeg);"></div>
+            <h1 class="title">WAEC</h1>
+        </div>
+        <div class="topic" onclick="topage('neco/')">
+            <div class="img" style="background-image: url(../assets/static/Neco.jpeg);"></div>
+            <h1 class="title">NECO</h1>
+        </div>
+        <div class="topic" onclick="topage('jamb/')">
+            <div class="img" style="background-image: url(../assets/static/jamb.jpeg);"></div>
+            <h1 class="title">JAMB</h1>
+        </div>
+        <div class="topic">
+            <div class="img" style="background-image: url(../assets/static/bece.jpeg);"></div>
+            <h1 class="title">BECE</h1>
+        </div>
+    </section>
+
+    <script>
+        function topage(url){
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>

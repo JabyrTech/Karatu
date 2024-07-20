@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Past and Questions - Karatu</title>
+
+    <style>
+        .button {
+            border: none;
+            padding: 10px;
+            color: gold;
+            align-self: end;
+            justify-self: end;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            margin-right: 10px;
+            border-radius: 20px;
+        }
+
+        .button img {
+                width: 30px;
+                color: White;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <section>
+            <h1>NECO Exam</h1>
+            <p>Past Questions</p>
+            <!-- <button class="button"> <img src="../assets/static/photo-album.png" alt=""> Open Gallery</button> -->
+        </section>
+    </header>
+
+    <section class="topics">
+        <input type="search" name="search" id="search" placeholder="Search School Bag..">
+        <div class="topic" onclick="topage('../../assets/static/JAMB Mathematics Past Questions 1983 - 2004.pdf')">
+            <div class="img" style="background-image: url(../../assets/static/Neco.jpeg);"></div>
+            <h1 class="title">Use of English</h1>
+        </div>
+        <div class="topic" onclick="topage('../../assets/static/JAMB Mathematics Past Questions 1983 - 2004.pdf')">
+            <div class="img" style="background-image: url(../../assets/static/Neco.jpeg);"></div>
+            <h1 class="title">Mathematics</h1>
+        </div>
+        <div class="topic" onclick="topage('three.html')">
+            <div class="img" style="background-image: url(../../assets/static/Neco.jpeg);"></div>
+            <h1 class="title">Physics</h1>
+        </div>
+        <div class="topic">
+            <div class="img" style="background-image: url(../../assets/static/Neco.jpeg);"></div>
+            <h1 class="title">Chemistry</h1>
+        </div>
+        <div class="topic" onclick="topage('../../assets/static/JAMB Mathematics Past Questions 1983 - 2004.pdf')">
+            <div class="img" style="background-image: url(../../assets/static/Neco.jpeg);"></div>
+            <h1 class="title">Biology</h1>
+        </div>
+        <div class="topic" onclick="topage('../../assets/static/JAMB Mathematics Past Questions 1983 - 2004.pdf')">
+            <div class="img" style="background-image: url(../../assets/static/Neco.jpeg);"></div>
+            <h1 class="title">Economics</h1>
+        </div>
+        <div class="topic" onclick="topage('../../assets/static/JAMB Mathematics Past Questions 1983 - 2004.pdf')">
+            <div class="img" style="background-image: url(../../assets/static/Neco.jpeg);"></div>
+            <h1 class="title">Commerce</h1>
+        </div>
+        <div class="topic" onclick="topage('../../assets/static/JAMB Mathematics Past Questions 1983 - 2004.pdf')">
+            <div class="img" style="background-image: url(../../assets/static/Neco.jpeg);"></div>
+            <h1 class="title">Accounting</h1>
+        </div>
+        <div class="topic" onclick="topage('../../assets/static/JAMB Mathematics Past Questions 1983 - 2004.pdf')">
+            <div class="img" style="background-image: url(../../assets/static/Neco.jpeg);"></div>
+            <h1 class="title">Litrature in English</h1>
+        </div>
+        <div class="topic" onclick="topage('../../assets/static/JAMB Mathematics Past Questions 1983 - 2004.pdf')">
+            <div class="img" style="background-image: url(../../assets/static/Neco.jpeg);"></div>
+            <h1 class="title">Government</h1>
+        </div>
+        <div class="topic" onclick="topage('../../assets/static/JAMB Mathematics Past Questions 1983 - 2004.pdf')">
+            <div class="img" style="background-image: url(../../assets/static/Neco.jpeg);"></div>
+            <h1 class="title">Computer Science</h1>
+        </div>
+    </section>
+
+    <script>
+        function topage(url){
+            window.location.href = url;
+        }
+
+        document.getElementById('search').addEventListener('input', function() {
+            const searchQuery = this.value.toLowerCase();
+            const sections = document.querySelectorAll('.topic');
+            
+            sections.forEach(section => {
+                const text = section.querySelector('h1').textContent.toLowerCase();
+                if (text.includes(searchQuery)) {
+                    section.style.display = 'flex'; // Show section
+                } else {
+                    section.style.display = 'none'; // Hide section
+                }
+            });
+        });
+    </script>
+</body>
+</html>

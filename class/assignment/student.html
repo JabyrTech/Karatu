@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classwork</title>
+    <link rel="stylesheet" href="student.css">
+</head>
+<body>
+    <header>
+        <div class="top">
+            <img src="../../assets/static/left-arrow.png" alt="" onclick="window.history.back()">
+            <h1>Assignment</h1>
+        </div>
+        <div class="searches">
+        <input type="search" name="search" id="search" placeholder="Search classwork..." oninput="filterBooks()">
+        <select name="class" id="class" onchange="filterBooks()">
+            <option value="all" disabled selected>All Classes</option>
+            <option value="JSS 1">JSS 1</option>
+            <option value="JSS 2">JSS 2</option>
+            <option value="JSS 3">JSS 3</option>
+            <option value="SS 1">SS 1</option>
+            <option value="SS 2">SS 2</option>
+            <option value="SS 3">SS 3</option>
+        </select>
+        </div>
+
+    </header>
+
+    <main>
+        <div class="work">
+            <input type="checkbox" name="done" id="done">
+            <div class="description">
+                <div class="title">Mathematics</div>
+                <div class="desc">Surds Classwork to be submitted in 5 minutes</div>
+                <div class="time">12:13pm</div>
+            </div>
+            <div class="buttons">
+                <button class="view" onclick="topage('view.html')">View</button>
+                <button class="submit" id="submit">Submit</button>
+            </div>
+        </div>
+        <div class="work">
+            <input type="checkbox" name="done" id="done" onclick="change()">
+            <div class="description">
+                <div class="title">English</div>
+                <div class="desc">To be submitted after break by the class captain</div>
+                <div class="time">12:13pm</div>
+            </div>
+            <div class="buttons">
+                <button class="view" onclick="topage('view.html')">View</button>
+                <button class="submit" id="submit">Submit</button>
+            </div>
+        </div>
+        <div class="work">
+            <input type="checkbox" name="done" id="done">
+            <div class="description">
+                <div class="title">Mathematics</div>
+                <div class="desc">Surds Classwork to be submitted in 5 minutes</div>
+                <div class="time">12:13pm</div>
+            </div>
+            <div class="buttons">
+                <button class="view" onclick="topage('view.html')">View</button>
+                <button class="submit" id="submit">Submit</button>
+            </div>
+        </div>
+        <div class="work">
+            <input type="checkbox" name="done" id="done">
+            <div class="description">
+                <div class="title">Mathematics</div>
+                <div class="desc">Surds Classwork to be submitted in 5 minutes</div>
+                <div class="time">12:13pm</div>
+            </div>
+            <div class="buttons">
+                <button class="view" onclick="topage('view.html')">View</button>
+                <button class="submit" id="submit">Submit</button>
+            </div>
+        </div>
+        <div class="work">
+            <input type="checkbox" name="done" id="done">
+            <div class="description">
+                <div class="title">Mathematics</div>
+                <div class="desc">Surds Classwork to be submitted in 5 minutes</div>
+                <div class="time">12:13pm</div>
+            </div>
+            <div class="buttons">
+                <button class="view" onclick="topage('view.html')">View</button>
+                <button class="submit" id="submit">Submit</button>
+            </div>
+        </div>
+        <div class="work">
+            <input type="checkbox" name="done" id="done">
+            <div class="description">
+                <div class="title">Mathematics</div>
+                <div class="desc">Surds Classwork to be submitted in 5 minutes</div>
+                <div class="time">12:13pm</div>
+            </div>
+            <div class="buttons">
+                <button class="view" onclick="topage('view.html')">View</button>
+                <button class="submit" id="submit">Submit</button>
+            </div>
+        </div>
+        <div class="work">
+            <input type="checkbox" name="done" id="done">
+            <div class="description">
+                <div class="title">Mathematics</div>
+                <div class="desc">Surds Classwork to be submitted in 5 minutes</div>
+                <div class="time">12:13pm</div>
+            </div>
+            <div class="buttons">
+                <button class="view" onclick="topage('view.html')">View</button>
+                <button class="submit" id="submit">Submit</button>
+            </div>
+        </div>
+        <div class="work">
+            <input type="checkbox" name="done" id="done">
+            <div class="description">
+                <div class="title">Mathematics</div>
+                <div class="desc">Surds Classwork to be submitted in 5 minutes</div>
+                <div class="time">12:13pm</div>
+            </div>
+            <div class="buttons">
+                <button class="view" onclick="topage('view.html')">View</button>
+                <button class="submit" id="submit">Submit</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function topage(url){
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #f9f9f9;
+}
+header {
+    background-color: white;
+    margin: 0;
+    /* color: red; */
+    text-align: center;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    box-shadow: 2px 2px 5px #bebebe;
+    padding: 2% 0;
+}
+
+.searches {
+    display: flex;
+    width: 95%;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
+}
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+    margin: auto;
+    img {
+        margin-right: 2%;
+        width: 20px;
+    }
+}
+
+input[type='search']{
+    width: 66%;
+    border-radius: 10px;
+    padding: 7px;
+    padding-left: 40px;
+    border: 1px solid gray;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: Black;
+    background-image: url('assets/static/search\ \(1\).png');
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: 1%;
+
+}
+
+select {
+    width: 30%;
+    border-radius: 10px;
+    padding: 7px;
+    padding-left: 40px;
+
+    border: 1px solid gray;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: Black;
+}
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.work {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2% 5%;
+    border-radius: 10px;
+    background-color: white;
+    margin: 1% 5%;
+}
+
+.title {
+    font-size: large;
+    font-weight: bold;
+}
+.time {
+    color: #bebebe;
+}
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 150px;
+}
+button {
+    border-radius: 5px;
+    padding: 5px 10px;
+    border: none;
+    color: white;
+}
+
+.view {
+    background-color: blue;
+}
+
+.submit {
+    background-color: green;
+}

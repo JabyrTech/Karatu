@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Culture - Karatu</title>
+    <style>
+        body {
+            background: linear-gradient(rgba(12, 131, 12, 0.808) 33%, white 33%, transparent 66%, rgba(12, 131, 12, 0.808) 34%);
+            height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        div {
+            width: 80%;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            background-color: white;
+            border-radius: 50px;
+            color: rgba(12, 131, 12, 0.808) !important;
+            padding: 30px;
+            box-shadow: 5px 5px 20px rgba(128, 128, 128, 0.637);
+        }
+
+        header {
+            font-size: 50px;
+            width: 100%;
+            text-align: center;
+        }
+
+        section {
+            width: 200px;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            margin-top: 50px;
+            font-weight: bold;
+        }
+
+        section div {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-image: url('../assets/static/bafade.jpeg');
+            background-size: cover;
+
+        }
+    </style>
+
+</head>
+<body>
+    <div>
+        <header>What Nigerian Tribe do you want to know about?</header>
+        <section onclick="topage('hausa.html')"><div></div> Hausa</section>
+        <section onclick="topage('igbo/Igbo.html')"><div style="background-image: url('../assets/static/igboman.jpeg');"></div> Igbo</section>
+        <section onclick="topage('yoruba/Yoruba.html')"><div style="background-image: url('../assets/static/yorubaman.webp');"></div> Yoruba</section>
+    </div>
+
+    <script>
+        function topage(url){
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>

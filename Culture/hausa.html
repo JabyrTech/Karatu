@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Culture - Karatu</title>
+
+    <style>
+        .button {
+            border: none;
+            padding: 10px;
+            color: green;
+            align-self: end;
+            justify-self: end;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            margin-right: 10px;
+            border-radius: 20px;
+        }
+
+        .button img {
+                width: 30px;
+                color: White;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <section>
+            <h1>MY CULTURE</h1>
+            <p>The Hausa Culture to know!</p>
+            <button class="button"> <img src="../assets/static/photo-album.png" alt=""> Open Gallery</button>
+        </section>
+    </header>
+
+    <section class="topics">
+        <div class="topic" onclick="topage('one.html')">
+            <div class="img" style="background-image: url(../assets/static/bayajidda.jpeg);"></div>
+            <h1 class="title">History</h1>
+        </div>
+        <div class="topic" onclick="topage('two.html')">
+            <div class="img" style="background-image: url(../assets/static/kano\ palace.jpg);"></div>
+            <h1 class="title">Kingdoms</h1>
+        </div>
+        <div class="topic" onclick="topage('../assets/static/5798349-hd_1920_1080_30fps.mp4')">
+            <div class="img" style="background-image: url(../assets/static/ahmadubello.jpg);"></div>
+            <h1 class="title">People</h1>
+        </div>
+        <div class="topic">
+            <div class="img" style="background-image: url(../assets/static/Tuwo.jpg);"></div>
+            <h1 class="title">Food</h1>
+        </div>
+        <div class="topic">
+            <div class="img" style="background-image: url(../assets/static/riga.jpg);"></div>
+            <h1 class="title">Dress</h1>
+        </div>
+        <div class="topic">
+            <div class="img" style="background-image: url(../assets/static/wedding.jpeg);"></div>
+            <h1 class="title">Wedding</h1>
+        </div>
+        <div class="topic">
+            <div class="img" style="background-image: url(../assets/static/festivals1.jpg);"></div>
+            <h1 class="title">Festivals</h1>
+        </div>
+        <div class="topic">
+            <div class="img" style="background-image: url(../assets/static/hausabooks.jpeg);"></div>
+            <h1 class="title">Books</h1>
+        </div>
+        <div class="topic">
+            <div class="img" style="background-image: url(../assets/static/festivals1.jpg);"></div>
+            <h1 class="title">Family</h1>
+        </div>
+        <div class="topic">
+            <div class="img" style="background-image: url(../assets/static/festivals1.jpg);"></div>
+            <h1 class="title">Folklore and Mythology</h1>
+        </div>
+
+    </section>
+
+    <script>
+        function topage(url){
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>

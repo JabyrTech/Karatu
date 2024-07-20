@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../school.css">
+    <title>School - Karatu</title>
+    <style>
+        a {
+            text-decoration: none !important;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <div class="top">
+                <img src="../assets/static/left-arrow.png" alt="" onclick="window.history.back()">
+                <h1>Class</h1>
+            </div>
+    
+            <input type="search" name="search" id="search" placeholder="Search School Bag..">
+    
+        </header>
+        <section>
+            <div class="section" onclick="topage('board/')"><div class="img"><img src="../assets/static/board.webp" alt="book"></div><p>Blackboard</p></div>
+            <a class="section" href="https://classroom.google.com/"><div class="img"><img src="../assets/static/conference-removebg-preview.png" alt="book"></div><p>Classroom</p></a>
+        </section>
+    </main>
+
+
+    <script>
+
+        function topage(url){
+            window.location.href = url;
+        }
+        document.getElementById('search').addEventListener('input', function() {
+            const searchQuery = this.value.toLowerCase();
+            const sections = document.querySelectorAll('.section');
+            
+            sections.forEach(section => {
+                const text = section.querySelector('p').textContent.toLowerCase();
+                if (text.includes(searchQuery)) {
+                    section.style.display = 'flex'; // Show section
+                } else {
+                    section.style.display = 'none'; // Hide section
+                }
+            });
+        });
+    </script>
+</body>
+</html>
