@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mathematics Class</title>
+    <link rel="stylesheet" href="class.css" />
+    <!-- Font Awesome for search icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://cdn.quilljs.com/1.3.6/quill.snow.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <div class="heading" onclick="window.history.back()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+          <path style="stroke:none;fill-rule:nonzero;fill:#fff;fill-opacity:1" d="m15.559 5.16-2.36-2.36L0 16l13.2 13.2 2.359-2.36L4.719 16Zm0 0"/>
+      </svg>
+      <p>Mathematics</p>
+      </div>
+      <div class="search-container">
+        <form action="javascript:void(0);">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search.."
+            onkeyup="searchClasses()"
+          />
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+        <div class="office">
+          <a href="https://office.com">
+            <img src="../static/../static/office.png" alt="" />
+          </a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <nav>
+        <ul>
+          <li><a href="#materials">Materials</a></li>
+          <li><a href="#conference">Conference</a></li>
+          <li><a href="#classwork">Classwork</a></li>
+          <li><a href="#assignments">Assignments</a></li>
+          <li><a href="#performance">Performance</a></li>
+        </ul>
+      </nav>
+
+      <!-- Sections -->
+      <section id="materials" class="materials">
+        <div class="materials">
+          <div class="description">
+            <div class="info">
+              <p>Mathematics Class <br />created by Professor Mike <br>Class code: qwert1234</p>
+            </div>
+          </div>
+        </div>
+        <div class="profilepic"><img src="../static/pp.jpg" alt="" /></div>
+        <div class="materials"></div>
+        <h2>Class Materials</h2>
+        <ul>
+          <li>
+            <a href="algebra.pdf">
+              <div class="icon"><img src="../static/file.png" alt="" /></div>
+              <div class="name">Algebra PDF 1 and 2</div>
+            </a>
+          </li>
+          <li>
+            <a href="https://office.com/create">
+              <div class="icon"><img src="../static/file.png" alt="" /></div>
+              <div class="name">Geometry Concepts PDF</div>
+            </a>
+          </li>
+          <li>
+            <li>
+              <a href="algebra.pdf">
+                <div class="icon"><img src="../static/file.png" alt="" /></div>
+                <div class="name">Algebra PDF 1 and 2</div>
+              </a>
+            </li>
+            <li>
+              <a href="https://office.com/create">
+                <div class="icon"><img src="../static/file.png" alt="" /></div>
+                <div class="name">Geometry Concepts PDF</div>
+              </a>
+            </li>
+            <li>
+              <li>
+                <a href="algebra.pdf">
+                  <div class="icon"><img src="../static/file.png" alt="" /></div>
+                  <div class="name">Algebra PDF 1 and 2</div>
+                </a>
+              </li>
+              <li>
+                <a href="https://office.com/create">
+                  <div class="icon"><img src="../static/file.png" alt="" /></div>
+                  <div class="name">Geometry Concepts PDF</div>
+                </a>
+              </li>
+              <li>
+            <a href="algebra.pdf">
+              <div class="icon"><img src="../static/media.webp" alt="" /></div>
+              <div class="name">Trigonometry Lecture Video</div>
+            </a>
+          </li>
+          <li>
+            <a href="algebra.pdf">
+              <div class="icon"><img src="../static/file.png" alt="" /></div>
+              <div class="name">Calculus Notes PDF</div>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section id="conference" class="conference">
+        <div class="in">
+          <h2>Class Conference</h2>
+          <p>Conference begin at 20:00pm prompt</p>
+          <br />
+
+          <p>Click the conference link button to join the conference</p>
+          <a href="#">Join Class</a>
+        </div>
+      </section>
+
+      <section id="classwork" class="classwork">
+        <h2>Classwork</h2>
+        <ul>
+          <li>
+            <p>Algebra: Solve for X in 3x + 4 = 19</p>
+            <br />
+            <div class="answer">
+              <!-- Container for Quill editor -->
+              <div id="editor-container"></div>
+              <span class="information"> ! Check your answer before submitting, You cannot undo submission!</span><br>
+              <button id="submit-btn" class="submit">Submit</button>
+              <button id="clear-btn">Clear Answer</button>
+            </div>
+          </li>
+        </ul>
+        <div
+          id="chartModal"
+          style="
+            display: none;
+            position: fixed;
+            top: 20%;
+            left: 30%;
+            width: 40%;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+          "
+        >
+          <h3>Create a Chart</h3>
+          <label for="chartType">Select Chart Type:</label>
+          <select id="chartType">
+            <option value="bar">Bar</option>
+            <option value="line">Line</option>
+            <option value="pie">Pie</option></select
+          ><br /><br />
+          <label>Data (Comma-separated numbers):</label>
+          <input
+            id="chartData"
+            type="text"
+            placeholder="e.g. 10, 20, 30"
+          /><br /><br />
+          <label>Labels (Comma-separated labels):</label>
+          <input
+            id="chartLabels"
+            type="text"
+            placeholder="e.g. A, B, C"
+          /><br /><br />
+          <button id="generateChart">Generate Chart</button>
+        </div>
+      </section>
+
+      <section id="assignments" class="assignments">
+        <h2>Assignments</h2>
+        <ul>
+          <li>
+            <strong>Assignment 1:</strong> Algebra Practice (Due: Friday,
+            September 18)
+          </li>
+          <li>
+            <strong>Assignment 2:</strong> Geometry Quiz (Due: Monday, September
+            21)
+          </li>
+          <li>
+            <strong>Assignment 3:</strong> Trigonometry Worksheet (Due:
+            Wednesday, September 23)
+          </li>
+          <li>
+            <strong>Assignment 4:</strong> Calculus Assignment (Due: Friday,
+            September 25)
+          </li>
+        </ul>
+      </section>
+
+      <section id="performance" class="performance">
+        <h2>Performance Summary</h2>
+        <div class="buttonshow">
+        <button onclick="calculateGrade()">Show Result</button>
+        </div>
+        
+        <table>
+          <tbody>
+            <tr>
+              <td>Assignment</td>
+              <td style="display: none;" id="assignment">10</td>
+            </tr>
+            <tr>
+              <td>Test 1</td>
+              <td style="display: none;" id="test1">10</td>
+            </tr>
+            <tr>
+              <td>Test 2</td>
+              <td style="display: none;" id="test2">20</td>
+            </tr>
+            <tr>
+              <td>Examination</td>
+              <td style="display: none;" id="exam">30</td>
+            </tr>
+            <tr>
+              <td>Overall</td>
+              <td id="overall">0</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="grade" id="grade">
+          <span id="gradeDisplay">--</span>
+        </div>
+      </section>
+    </main>
+    <div class="wrapper"></div>
+    <script src="class.js"></script>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script>
+      // Custom Quill toolbar with chart button
+      var toolbarOptions = [
+        [{ font: [] }], // Font family
+        [{ size: ["small", false, "large", "huge"] }], // Font size
+        [{ header: [1, 2, 3, false] }], // Heading levels (H1, H2, H3)
+        ["bold", "italic", "underline", "strike"], // Basic formatting
+        [{ script: "sub" }, { script: "super" }], // Subscript and superscript
+        [{ color: [] }, { background: [] }], // Text color and background color
+        [{ list: "ordered" }, { list: "bullet" }], // Lists
+        [{ align: [] }], // Text alignment
+        ["blockquote", "code-block"], // Blockquote and code block
+        ["link", "image"], // Add links and images
+        [{ chart: "data" }], // Custom button for data visualizations
+        ["clean"], // Remove formatting
+      ];
+
+      // Initialize Quill editor with the 'bubble' theme and custom toolbar
+      var quill = new Quill("#editor-container", {
+        theme: "snow", // Change theme to 'bubble'
+        modules: {
+          toolbar: {
+            container: toolbarOptions,
+            handlers: {
+              chart: function () {
+                document.getElementById("chartModal").style.display = "block";
+              },
+            },
+          },
+        },
+      });
+
+      // Handle Chart.js and insert chart into Quill editor
+      document
+        .getElementById("generateChart")
+        .addEventListener("click", function () {
+          const type = document.getElementById("chartType").value;
+          const dataInput = document.getElementById("chartData").value;
+          const labelInput = document.getElementById("chartLabels").value;
+
+          // Parse input
+          const data = dataInput.split(",").map(Number);
+          const labels = labelInput.split(",");
+
+          // Create canvas for the chart
+          const canvas = document.createElement("canvas");
+          const ctx = canvas.getContext("2d");
+
+          // Generate chart with Chart.js
+          new Chart(ctx, {
+            type: type,
+            data: {
+              labels: labels,
+              datasets: [
+                {
+                  label: "My Dataset",
+                  data: data,
+                  backgroundColor: ["rgba(75, 192, 192, 0.2)"],
+                  borderColor: ["rgba(75, 192, 192, 1)"],
+                  borderWidth: 1,
+                },
+              ],
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+            },
+          });
+
+          // Insert chart into the Quill editor
+          quill.root.appendChild(canvas);
+          document.getElementById("chartModal").style.display = "none"; // Hide modal
+        });
+
+      // Submit button functionality
+      var submitBtn = document.getElementById("submit-btn");
+      submitBtn.addEventListener("click", function () {
+        // Get content from Quill editor
+        var answer = quill.root.innerHTML;
+
+        // Here, you can handle the answer (e.g., send it to a server or process it)
+        console.log("Submitted answer:", answer);
+
+        // Disable the button after submission
+        submitBtn.disabled = true;
+        submitBtn.innerText = "Submitted";
+      });
+
+
+      // Load the saved answer from localStorage when the page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      let savedAnswer = localStorage.getItem('userAnswer');
+      if (savedAnswer) {
+        quill.setText(savedAnswer); // Load saved text in editor
+      }
+    });
+
+    // Save the answer to localStorage as the user types
+    quill.on('text-change', function() {
+      let answer = quill.getText();
+      localStorage.setItem('userAnswer', answer);
+    });
+
+    // Submit button handler
+    document.getElementById('submit-btn').addEventListener('click', function() {
+      let answer = quill.getText().trim();
+      if (answer === '') {
+        alert('Please enter your answer before submitting.');
+      } else {
+        alert('Your answer has been submitted: ' + answer);
+        // You can handle form submission logic here
+      }
+    });
+
+    // Clear the answer from localStorage and editor
+    document.getElementById('clear-btn').addEventListener('click', function() {
+      quill.setText(''); // Clear the editor
+      localStorage.removeItem('userAnswer'); // Clear localStorage
+      alert('Your answer has been cleared.');
+    });
+    </script>
+  </body>
+</html>

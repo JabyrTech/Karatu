@@ -1,0 +1,226 @@
+/* Basic reset for padding, margins */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body and main container styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  padding: 0px;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+main {
+  padding: 20px;
+  padding-bottom: 100px;
+}
+
+/* Header styling */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  background-color: #f5f5f5;
+}
+
+header p {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Search bar styling */
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-container input[type="text"] {
+  padding: 10px;
+  width: 200px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  margin-right: 5px;
+  transition: width 0.4s ease-in-out;
+}
+
+.search-container input[type="text"]:focus {
+  width: 300px;
+  border-color: #007bff;
+}
+
+.search-container button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Message styling */
+.message {
+  margin-bottom: 20px;
+}
+
+.message h1 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #555;
+}
+
+.message h1 span {
+  color: #007bff;
+  font-size: 34px;
+}
+
+/* Class container styling */
+.classes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.class {
+  color: white !important;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 15px;
+  height: 200px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.class:hover {
+  transform: scale(1.05);
+}
+
+.class .name p {
+  font-size: 18px;
+  font-weight: bold;
+  /* color: #333; */
+}
+
+.class .teacher p {
+  font-size: 14px;
+  color: #ddd;
+}
+
+/* Add button styling */
+.add {
+  height: 50px;
+  width: 50px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #007bff;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add:hover {
+  background-color: #0056b3;
+}
+
+.wrapper {
+  position: fixed;
+  bottom: 0;
+  width: 1000px;
+  height: 20vh;
+  background: linear-gradient(transparent 20%, white);
+}
+
+
+.office img {
+  width: 30px;
+
+}
+
+header form {
+  display: flex;
+  /* width: 300px; */
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 10px;
+}
+
+
+
+.addclass {
+  width: 100%;
+  height: 100vh;
+  background-color: #3333339d;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+}
+
+.addclass form {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 20px;
+  /* box-shadow: 20px 20px 60px #313131, -20px -20px 60px #000000; */
+  /* color: white; */
+  font-size: x-large;
+  /* backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.5);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125); */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: rgb(255, 255, 255);
+}
+
+.addclass form input {
+  width: 200px;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 15px;
+  text-align: center;
+  border: 1px solid #004;
+}
+
+.addclass form .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+}
+
+.addclass p:first-child {
+  width: 100%;
+  text-align: right;
+  margin-bottom: 50px;
+}
+
+.addclass .note {
+  font-size: x-small !important;
+}
+

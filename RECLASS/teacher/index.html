@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karatu Class</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="shortcut icon" href="bee.jpeg" type="image/x-icon">
+
+</head>
+<body>
+    <header>
+        <p>Class</p>
+        <div class="search-container">
+            <form action="javascript:void(0);">
+              <input type="text" id="searchInput" placeholder="Search.." onkeyup="searchClasses()">
+              <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+            <div class="office">
+                <a href="https://office.com">
+                  <img src="office.png" alt="" />
+                </a>
+              </div>
+        </div>
+        
+    </header>
+    <main>
+        <div class="message">
+            <h1>Classes you have created</h1>
+        </div>
+        <div class="classes" id="classList">
+            <div class="class" onclick="topage('teacher.html')" style="background: linear-gradient(90deg, #004aad, #cb6ce6)">
+                <div class="name"><p>Mathematics JSS 1</p></div>
+                <div class="teacher"><p>Professor Mike</p></div>
+            </div>
+            <div class="class" onclick="topage('teacher.html')" style="background: linear-gradient(90deg, #004aad, #cb6ce6)">
+                <div class="name"><p>Mathematics JSS 2</p></div>
+                <div class="teacher"><p>Professor Mike</p></div>
+            </div>
+            <div class="class" onclick="topage('teacher.html')" style="background: linear-gradient(90deg, #004aad, #cb6ce6)">
+                <div class="name"><p>Mathematics JSS 3</p></div>
+                <div class="teacher"><p>Professor Mike</p></div>
+            </div>
+            <div class="class" onclick="topage('teacher.html')" style="background: linear-gradient(90deg, #004aad, #cb6ce6)">
+                <div class="name"><p>Mathematics SS 1</p></div>
+                <div class="teacher"><p>Professor Mike</p></div>
+            </div>
+            <div class="class" onclick="topage('teacher.html')" style="background: linear-gradient(90deg, #004aad, #cb6ce6)">
+                <div class="name"><p>Mathematics SS 2</p></div>
+                <div class="teacher"><p>Professor Mike</p></div>
+            </div>
+            <div class="class" onclick="topage('teacher.html')" style="background: linear-gradient(90deg, #004aad, #cb6ce6)">
+                <div class="name"><p>Mathematics SS 3</p></div>
+                <div class="teacher"><p>Professor Mike</p></div>
+            </div>
+            
+        </div>
+    </main>
+    <div class="wrapper">
+
+    </div>
+    <div class="add" onclick="toggle()">
+        <h1>&plus;</h1>
+    </div>
+    <section class="addclass" id="addclass">
+        <form action="#">
+            <p onclick="toggle()">x</p>
+            <label for="classname">Class Name: </label>
+            <input type="text" name="classname" id="classname">
+            <p class="note">Class Code will be randomly generated!</p> <br>
+            <div class="buttons">
+                <button type="button" onclick="window.history.back()">close</button>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </section>
+
+    <script src="index.js"></script>
+</body>
+</html>

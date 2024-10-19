@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karatu Class</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="shortcut icon" href="bee.jpeg" type="image/x-icon">
+
+</head>
+<body>
+    <header>
+        <p>Class</p>
+        <div class="search-container">
+            <form action="javascript:void(0);">
+              <input type="text" id="searchInput" placeholder="Search.." onkeyup="searchClasses()">
+              <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+            <div class="office">
+                <a href="https://office.com">
+                  <img src="office.png" alt="" />
+                </a>
+              </div>
+        </div>
+        
+    </header>
+    <main>
+        <div class="message">
+            <h1>All your Classes</h1>
+        </div>
+        <div class="classes" id="classList">
+            <div class="class" onclick="topage('class.html')" style="background: linear-gradient(90deg, #004aad, #cb6ce6)">
+                <div class="name"><p>Mathematics</p></div>
+                <div class="teacher"><p>Professor Mike</p></div>
+            </div>
+            <div class="class" onclick="topage('class.html')" style="background: linear-gradient(90deg, #8c52ff, #ff914d)">
+                <div class="name"><p>English</p></div>
+                <div class="teacher"><p>Professor Jane</p></div>
+            </div>
+            <div class="class" onclick="topage('class.html')" style="background: linear-gradient(90deg, #ff3131, #ff914d)">
+                <div class="name"><p>History</p></div>
+                <div class="teacher"><p>Professor Tom</p></div>
+            </div>
+            <div class="class" onclick="topage('class.html')" style="background: linear-gradient(90deg,#0097b2, #7ed957)">
+                <div class="name"><p>Science</p></div>
+                <div class="teacher"><p>Professor Dave</p></div>
+            </div>
+            <div class="class" onclick="topage('class.html')" style="background: linear-gradient(90deg, #ffde59, #ff914d)">
+                <div class="name"><p>Art</p></div>
+                <div class="teacher"><p>Professor Anne</p></div>
+            </div>
+            <div class="class" onclick="topage('class.html')" style="background: linear-gradient(90deg, #004aad, #cb6ce6)">
+                <div class="name"><p>Mathematics</p></div>
+                <div class="teacher"><p>Professor Mike</p></div>
+            </div>
+            <div class="class" onclick="topage('class.html')" style="background: linear-gradient(90deg, #8c52ff, #ff914d)">
+                <div class="name"><p>English</p></div>
+                <div class="teacher"><p>Professor Jane</p></div>
+            </div>
+            <div class="class" onclick="topage('class.html')" style="background: linear-gradient(90deg, #ff3131, #ff914d)">
+                <div class="name"><p>History</p></div>
+                <div class="teacher"><p>Professor Tom</p></div>
+            </div>
+            <div class="class" onclick="topage('class.html')" style="background: linear-gradient(90deg,#0097b2, #7ed957)">
+                <div class="name"><p>Science</p></div>
+                <div class="teacher"><p>Professor Dave</p></div>
+            </div>
+            <div class="class" onclick="topage('class.html')" style="background: linear-gradient(90deg, #ffde59, #ff914d)">
+                <div class="name"><p>Art</p></div>
+                <div class="teacher"><p>Professor Anne</p></div>
+            </div>
+            <div class="class" onclick="topage('class.html')" style="background: linear-gradient(90deg, #004aad, #cb6ce6)">
+                <div class="name"><p>Mathematics</p></div>
+                <div class="teacher"><p>Professor Mike</p></div>
+            </div>
+            <div class="class" onclick="topage('class.html')" style="background: linear-gradient(90deg, #8c52ff, #ff914d)">
+                <div class="name"><p>English</p></div>
+                <div class="teacher"><p>Professor Jane</p></div>
+            </div>
+            <div class="class" onclick="topage('class.html')" style="background: linear-gradient(90deg, #ff3131, #ff914d)">
+                <div class="name"><p>History</p></div>
+                <div class="teacher"><p>Professor Tom</p></div>
+            </div>
+            <div class="class" onclick="topage('class.html')" style="background: linear-gradient(90deg,#0097b2, #7ed957)">
+                <div class="name"><p>Science</p></div>
+                <div class="teacher"><p>Professor Dave</p></div>
+            </div>
+            <div class="class" onclick="topage('class.html')" style="background: linear-gradient(90deg, #ffde59, #ff914d)">
+                <div class="name"><p>Art</p></div>
+                <div class="teacher"><p>Professor Anne</p></div>
+            </div>
+        </div>
+    </main>
+    <div class="wrapper">
+
+    </div>
+    <div class="add" onclick="toggle()">
+        <h1>&plus;</h1>
+    </div>
+    <section class="addclass" id="addclass">
+        <form action="#">
+            <p onclick="toggle()">x</p>
+            <p>Enter Class Code</p>
+            <input type="text" name="code" id="code">
+            <div class="buttons">
+                <button type="button" onclick="window.history.back()">close</button>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </section>
+
+    <script src="index.js"></script>
+</body>
+</html>

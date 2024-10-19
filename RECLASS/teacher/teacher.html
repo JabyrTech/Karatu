@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teacher Dashboard - Mathematics Class</title>
+    <link rel="stylesheet" href="teacher.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://cdn.quilljs.com/1.3.6/quill.snow.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="heading" onclick="window.history.back()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+          <path
+            style="stroke:none;fill-rule:nonzero;fill:#fff;fill-opacity:1"
+            d="m15.559 5.16-2.36-2.36L0 16l13.2 13.2 2.359-2.36L4.719 16Zm0 0"
+          />
+        </svg>
+        <p>Teacher Dashboard</p>
+      </div>
+    </header>
+
+    <main>
+      <nav>
+        <ul>
+          <li><a href="#upload-materials"> Materials</a></li>
+          <li><a href="#manage-classwork">Classwork</a></li>
+          <li><a href="#create-assignments">Assignments</a></li>
+          <li><a href="#review-submissions">Submissions</a></li>
+          <li><a href="#student-performance">Performance</a></li>
+        </ul>
+      </nav>
+      <section id="upload-materials" class="materials active">
+        <div class="materials">
+          <div class="description">
+            <div class="info">
+              <p>Mathematics JSS 1 Class <br />created by Professor Mike <br>Class code: qwert1234</p>
+            </div>
+          </div>
+        </div><br><br>
+        <div class="materials form">
+        <h2>Upload Materials</h2>
+        <label for="material">File:</label>
+        <input type="file" name="material" id="material">
+        <input type="submit" class="submit">
+        </div><br><br>
+        <div class="materials">
+
+        </div>
+        <h2>Class Materials</h2>
+        <ul>
+          <li>
+            <a href="algebra.pdf">
+              <div class="icon"><img src="../static/file.png" alt="" /></div>
+              <div class="name">Algebra PDF 1 and 2</div>
+            </a>
+          </li>
+          <li>
+            <a href="https://office.com/create">
+              <div class="icon"><img src="../static/file.png" alt="" /></div>
+              <div class="name">Geometry Concepts PDF</div>
+            </a>
+          </li>
+          <li>
+            <li>
+              <a href="algebra.pdf">
+                <div class="icon"><img src="../static/file.png" alt="" /></div>
+                <div class="name">Algebra PDF 1 and 2</div>
+              </a>
+            </li>
+            <li>
+              <a href="https://office.com/create">
+                <div class="icon"><img src="../static/file.png" alt="" /></div>
+                <div class="name">Geometry Concepts PDF</div>
+              </a>
+            </li>
+            <li>
+              <li>
+                <a href="algebra.pdf">
+                  <div class="icon"><img src="../static/file.png" alt="" /></div>
+                  <div class="name">Algebra PDF 1 and 2</div>
+                </a>
+              </li>
+              <li>
+                <a href="https://office.com/create">
+                  <div class="icon"><img src="../static/file.png" alt="" /></div>
+                  <div class="name">Geometry Concepts PDF</div>
+                </a>
+              </li>
+              <li>
+            <a href="algebra.pdf">
+              <div class="icon"><img src="../static/media.webp" alt="" /></div>
+              <div class="name">Trigonometry Lecture Video</div>
+            </a>
+          </li>
+          <li>
+            <a href="algebra.pdf">
+              <div class="icon"><img src="../static/file.png" alt="" /></div>
+              <div class="name">Calculus Notes PDF</div>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Create Assignments Section -->
+      <section id="create-assignments">
+        <h2>Create New Assignment</h2>
+        <form id="create-assignment-form">
+          <label for="assignment-title">Assignment Title:</label>
+          <input
+            type="text"
+            id="assignment-title"
+            placeholder="Enter assignment title"
+          /><br /><br />
+
+          <label for="assignment-description">Description:</label>
+          <textarea
+            id="assignment-description"
+            rows="5"
+            placeholder="Provide a description of the assignment"
+          ></textarea><br /><br />
+
+          <label for="due-date">Due Date:</label>
+          <input type="date" id="due-date" /><br /><br />
+
+          <button type="submit">Create Assignment</button>
+        </form>
+      </section>
+
+      <!-- Manage Classwork Section -->
+      <section id="manage-classwork">
+        <h2>Manage Classwork</h2>
+        <p>Here you can view and update ongoing classwork:</p>
+        <ul>
+          <li>
+            <strong>Algebra Problem:</strong> Solve for X in 3x + 4 = 19
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+          </li>
+          <li>
+            <strong>Geometry Problem:</strong> Calculate the area of a circle
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+          </li>
+          <!-- Additional classwork problems can be added here -->
+        </ul><br><br>
+
+        <div class="classwork">
+          <h2>Add new Classwork</h2>
+              <div class="work">
+                <!-- Container for Quill editor -->
+                <div id="editor-container"></div><br>
+                <button id="submit-btn" class="submit">Submit</button>
+                <button id="clear-btn">Clear Work</button>
+              </div>
+          <div
+            id="chartModal"
+            style="
+              display: none;
+              position: fixed;
+              top: 20%;
+              left: 30%;
+              width: 40%;
+              background-color: white;
+              padding: 20px;
+              box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            "
+          >
+            <h3>Create a Chart</h3>
+            <label for="chartType">Select Chart Type:</label>
+            <select id="chartType">
+              <option value="bar">Bar</option>
+              <option value="line">Line</option>
+              <option value="pie">Pie</option></select
+            ><br /><br />
+            <label>Data (Comma-separated numbers):</label>
+            <input
+              id="chartData"
+              type="text"
+              placeholder="e.g. 10, 20, 30"
+            /><br /><br />
+            <label>Labels (Comma-separated labels):</label>
+            <input
+              id="chartLabels"
+              type="text"
+              placeholder="e.g. A, B, C"
+            /><br /><br />
+            <button id="generateChart">Generate Chart</button>
+          </div>
+        </div>
+  
+      </section>
+
+      <!-- Review Submissions Section -->
+      <section id="review-submissions">
+        <h2>Review Student Submissions</h2>
+        <p>Click on a student's name to review their submission:</p>
+        <ul id="student-submissions-list">
+          <li>
+            <strong>Student Name:</strong> John Doe - Algebra Submission
+            <button onclick="reviewSubmission('John Doe')">Review</button>
+          </li>
+          <li>
+            <strong>Student Name:</strong> Jane Smith - Geometry Submission
+            <button onclick="reviewSubmission('Jane Smith')">Review</button>
+          </li>
+          <!-- Additional student submissions go here -->
+        </ul>
+      </section>
+
+      <!-- Student Performance Section -->
+      <section id="student-performance">
+        <h2>Student Performance Summary</h2>
+        <button onclick="showPerformance()">View Performance</button>
+
+        <div id="performance-table" style="display: none;">
+          <table style="width: 100%;">
+            <thead>
+              <tr>
+                <th>Student</th>
+                <th>Assignment 1</th>
+                <th>Test 1</th>
+                <th>Test 2</th>
+                <th>Exam</th>
+                <th>Overall Grade</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>John Doe</td>
+                <td>85%</td>
+                <td>90%</td>
+                <td>75%</td>
+                <td>80%</td>
+                <td>82.5%</td>
+              </tr>
+              <tr>
+                <td>Jane Smith</td>
+                <td>92%</td>
+                <td>88%</td>
+                <td>95%</td>
+                <td>85%</td>
+                <td>90%</td>
+              </tr>
+              <!-- Additional student performance data goes here -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      // Review student submission logic
+      function reviewSubmission(studentName) {
+        alert('You are reviewing ' + studentName + "'s submission.");
+        // Here, you can implement logic to show the specific submission of the student
+      }
+
+      // Show performance table logic
+      function showPerformance() {
+        document.getElementById('performance-table').style.display = 'block';
+      }
+
+      // Assignment creation logic
+      document
+        .getElementById('create-assignment-form')
+        .addEventListener('submit', function (event) {
+          event.preventDefault();
+          const title = document.getElementById('assignment-title').value;
+          const description = document.getElementById('assignment-description')
+            .value;
+          const dueDate = document.getElementById('due-date').value;
+
+          if (title && description && dueDate) {
+            alert(
+              'Assignment created:\nTitle: ' +
+                title +
+                '\nDescription: ' +
+                description +
+                '\nDue Date: ' +
+                dueDate
+            );
+          } else {
+            alert('Please fill out all fields before creating an assignment.');
+          }
+        });
+    </script>
+
+    <script src="teacher.js"></script>
+  </body>
+</html>
