@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Excel Quiz Generator - Love Edition</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #ffe6e6;
+        color: #d63384;
+        background-image: url("https://www.transparenttextures.com/patterns/roses.png");
+      }
+      h1 {
+        font-size: 2.5em;
+      }
+      #quiz-container {
+        display: none;
+        background: #fff0f5;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        margin: 20px auto;
+        width: 60%;
+      }
+      .question {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+      }
+      .option {
+        display: block;
+        margin: 5px auto;
+        background: #ff66b2;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+      .option:hover {
+        background: #ff3385;
+      }
+      #timer,
+      #anniversary-timer {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin: 10px 0;
+      }
+      .flower {
+        position: absolute;
+        width: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>💕 Upload Excel File for Quiz 💕</h1>
+    <input type="file" id="fileInput" accept=".xlsx, .xls" />
+    <button onclick="startQuiz()">Start Quiz</button>
+    <p id="anniversary-timer"></p>
+    <div id="quiz-container">
+      <p id="timer"></p>
+      <div id="question-box"></div>
+      <button onclick="nextQuestion()">Next</button>
+    </div>
+    <script>
+      let questions = [];
+      let currentQuestionIndex = 0;
+      let score = 0;
+      let timer;
+      let timeLeft = 150;
+      document
+        .getElementById("fileInput")
+        .addEventListener("change", handleFile);
+      function handleFile(event) {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          const data = new Uint8Array(e.target.result);
+          const workbook = XLSX.read(data, { type: "array" });
+          const sheetName = workbook.SheetNames[0];
+          const sheet = workbook.Sheets[sheetName];
+          questions = XLSX.utils.sheet_to_json(sheet);
+        };
+        reader.readAsArrayBuffer(file);
+      }
+      function startQuiz() {
+        if (questions.length === 0) {
+          alert("Please upload a valid Excel file first.");
+          return;
+        }
+        questions = shuffleArray(questions).slice(0, 20);
+        document.getElementById("quiz-container").style.display = "block";
+        document.getElementById("fileInput").style.display = "none";
+        displayQuestion();
+        startTimer();
+        startAnniversaryTimer();
+      }
+      function displayQuestion() {
+        if (currentQuestionIndex >= questions.length) {
+          clearInterval(timer);
+          alert("Quiz Over! Your score: " + score + " / " + questions.length);
+          location.reload();
+          return;
+        }
+        const questionData = questions[currentQuestionIndex];
+        document.getElementById(
+          "question-box"
+        ).innerHTML = ` <div class="question">${questionData.Questions}</div> <button class="option" onclick="checkAnswer('${questionData["Option A"]}', '${questionData.Answers}')">A. ${questionData["Option A"]}</button> <button class="option" onclick="checkAnswer('${questionData["Option B"]}', '${questionData.Answers}')">B. ${questionData["Option B"]}</button> <button class="option" onclick="checkAnswer('${questionData["Option C"]}', '${questionData.Answers}')">C. ${questionData["Option C"]}</button> <button class="option" onclick="checkAnswer('${questionData["Option D"]}', '${questionData.Answers}')">D. ${questionData["Option D"]}</button> `;
+      }
+      function checkAnswer(selectedOption, correctLetter) {
+        let options = ["Option A", "Option B", "Option C", "Option D"];
+
+        let correctAnswerText = questions[currentQuestionIndex][options[correctLetter.charCodeAt(0) - 65]];
+
+        if (selectedOption === correctAnswerText) {
+          score++;
+        }
+        currentQuestionIndex++;
+        displayQuestion();
+      }
+      function startTimer() {
+        document.getElementById(
+          "timer"
+        ).textContent = `Time left: ${timeLeft}s`;
+        timer = setInterval(() => {
+          timeLeft--;
+          document.getElementById(
+            "timer"
+          ).textContent = `Time left: ${timeLeft}s`;
+          if (timeLeft <= 0) {
+            clearInterval(timer);
+            alert("Time's up! Your score: " + score + " / " + questions.length);
+            location.reload();
+          }
+        }, 1000);
+      }
+      function startAnniversaryTimer() {
+        const anniversaryDate = new Date("March 16, 2025 00:00:00").getTime();
+        setInterval(() => {
+          const now = new Date().getTime();
+          const distance = anniversaryDate - now;
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor(
+            (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          const minutes = Math.floor(
+            (distance % (1000 * 60 * 60)) / (1000 * 60)
+          );
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+          document.getElementById(
+            "anniversary-timer"
+          ).textContent = `💕 Our Anniversary in: ${days}d ${hours}h ${minutes}m ${seconds}s 💕`;
+        }, 1000);
+      }
+      function shuffleArray(array) {
+        return array.sort(() => Math.random() - 0.5);
+      }
+    </script>
+  </body>
+</html>
